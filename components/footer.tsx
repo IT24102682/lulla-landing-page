@@ -87,7 +87,7 @@ export function Footer() {
       </div>
 
       <div className="pt-12 border-t border-background/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.2em] text-background/30">
-        <p>© 2025 Lulla & Co. All Rights Reserved.</p>
+        <p>© 2026 Lulla & Co. All Rights Reserved.</p>
         <div className="flex gap-8">
           <Link href="#">Privacy Policy</Link>
           <Link href="#">Terms of Service</Link>
