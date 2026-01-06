@@ -20,7 +20,7 @@ export function Newsletter() {
           />
           <Button
             size="lg"
-            className="h-14 px-12 rounded-full bg-background text-foreground hover:bg-background/90 text-lg w-full sm:w-auto"
+            className="h-14 px-12 rounded-full bg-background text-foreground hover:bg-background/90 text-lg w-full sm:w-auto transition-all duration-300 hover:-translate-y-1 hover:shadow-lg active:scale-95"
           >
             Subscribe
           </Button>

@@ -1,0 +1,103 @@
+[
+    {
+        "id": "1",
+        "name": "Handloom Silk Slip",
+        "price": "Rs. 18,500",
+        "image": "/minimalist-silk-slip-dress-sage-green.jpg",
+        "category": "dresses",
+        "collections": [
+            "into-the-season-vol-04"
+        ]
+    },
+    {
+        "id": "2",
+        "name": "Cream Cashmere Knit Top",
+        "price": "Rs. 12,200",
+        "image": "/cream-cashmere-knit-top-minimalist.jpg",
+        "category": "sets",
+        "collections": [
+            "into-the-season-vol-03",
+            "the-ease-edit-vol-03"
+        ]
+    },
+    {
+        "id": "3",
+        "name": "Batik Tailored Vest",
+        "price": "Rs. 9,800",
+        "image": "/tailored-linen-vest-charcoal-gray.jpg",
+        "category": "tops",
+        "collections": [
+            "the-ease-edit-drop-02"
+        ]
+    },
+    {
+        "id": "4",
+        "name": "Satin Island Trousers",
+        "price": "Rs. 14,500",
+        "image": "/satin-trousers-beige-minimalist.jpg",
+        "category": "pants",
+        "collections": [
+            "into-the-season-vol-02"
+        ]
+    },
+    {
+        "id": "5",
+        "name": "Fenella Black Tube Top",
+        "price": "Rs. 3,490",
+        "image": "/minimalist-clothing-detail-fabric-texture-sage.jpg",
+        "category": "tops",
+        "collections": [
+            "the-ease-edit-vol-04"
+        ]
+    },
+    {
+        "id": "6",
+        "name": "Aily One Shoulder Maxi",
+        "price": "Rs. 7,290",
+        "image": "/feminine-minimalist-fashion-model-editorial-cream-.jpg",
+        "category": "maxi-dresses",
+        "collections": [
+            "into-the-season-vol-01"
+        ]
+    },
+    {
+        "id": "7",
+        "name": "Classic Linen Shirt",
+        "price": "Rs. 8,900",
+        "image": "/sri-lankan-model-minimalist-fashion-island-aesthet.jpg",
+        "category": "shirts",
+        "collections": [
+            "oversized-tees"
+        ]
+    },
+    {
+        "id": "8",
+        "name": "High-Waist Cotton Skirt",
+        "price": "Rs. 9,500",
+        "image": "/high-waist-cotton-skirt.png",
+        "category": "skirts",
+        "collections": [
+            "the-ease-edit-drop-02"
+        ]
+    },
+    {
+        "id": "9",
+        "name": "Essential White Tee",
+        "price": "Rs. 4,500",
+        "image": "/essential-white-tee.png",
+        "category": "t-shirts",
+        "collections": [
+            "oversized-tees"
+        ]
+    },
+    {
+        "id": "10",
+        "name": "Linen Pleated Shorts",
+        "price": "Rs. 6,800",
+        "image": "/linen-pleated-shorts.png",
+        "category": "shorts",
+        "collections": [
+            "the-ease-edit-vol-03"
+        ]
+    }
+]

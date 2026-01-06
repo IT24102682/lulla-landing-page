@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export function Hero() {
   return (
@@ -29,17 +30,24 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 pt-4">
-          <Button size="lg" className="rounded-full px-10 py-7 text-lg group">
-            Shop the Collection
-            <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+        <div className="flex flex-col sm:flex-row gap-4 pt-4 group">
+          <Button
+            size="lg"
+            className="rounded-full px-10 py-7 text-lg group/btn transition-all duration-300 border border-transparent bg-foreground text-background group-hover:bg-background group-hover:text-foreground group-hover:border-foreground/20 hover:!bg-foreground hover:!text-background hover:!border-transparent hover:-translate-y-1 hover:shadow-lg active:scale-95"
+            asChild
+          >
+            <Link href="/collections">
+              Shop the Collection
+              <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover/btn:translate-x-1" />
+            </Link>
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="rounded-full px-10 py-7 text-lg border-foreground/20 bg-transparent"
+            className="rounded-full px-10 py-7 text-lg border-foreground/20 bg-transparent transition-all duration-300 hover:bg-foreground hover:text-background hover:border-transparent hover:-translate-y-1 hover:shadow-md active:scale-95"
+            asChild
           >
-            View Lookbook
+            <Link href="/lookbook">View Lookbook</Link>
           </Button>
         </div>
       </div>

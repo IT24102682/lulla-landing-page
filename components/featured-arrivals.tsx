@@ -1,4 +1,5 @@
 import { ProductCard } from "./product-card"
+import Link from "next/link"
 
 const PRODUCTS = [
   { name: "Handloom Silk Slip", price: "Rs. 18,500", image: "/minimalist-silk-slip-dress-sage-green.jpg" },
@@ -17,9 +18,9 @@ export function FeaturedArrivals() {
             Curated pieces from our latest Autumn capsule, focused on texture and form.
           </p>
         </div>
-        <button className="text-sm font-bold uppercase tracking-widest border-b-2 border-foreground pb-1 hover:text-muted-foreground transition-colors">
+        <Link href="/inventory" className="text-sm font-bold uppercase tracking-widest border-b-2 border-foreground pb-1 hover:text-muted-foreground transition-colors">
           View All Products
-        </button>
+        </Link>
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
