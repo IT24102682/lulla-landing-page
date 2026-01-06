@@ -1,9 +1,30 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { useState } from "react"
+import { useRouter } from "next/navigation"
 
 export default function LoginPage() {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const router = useRouter()
+
+    const handleLogin = (e: React.FormEvent) => {
+        e.preventDefault()
+
+        // Simple mock authentication
+        if (email === "admin@lulla.com" && password === "admin123") {
+            router.push("/admin")
+        } else {
+            // For now, regular user login could redirect to home or show an error
+            // router.push("/")
+            alert("Invalid credentials. Try admin@lulla.com / admin123")
+        }
+    }
+
     return (
         <div className="flex min-h-screen w-full">
             {/* Left Side - Marquee Animation */}
@@ -35,7 +56,7 @@ export default function LoginPage() {
                         </h2>
                     </div>
 
-                    <form className="space-y-6">
+                    <form className="space-y-6" onSubmit={handleLogin}>
                         <div className="space-y-2">
                             <Label htmlFor="email" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
                                 E-MAIL
@@ -45,6 +66,8 @@ export default function LoginPage() {
                                 type="email"
                                 placeholder=""
                                 className="border-0 border-b border-border bg-transparent px-0 shadow-none focus-visible:ring-0 focus-visible:border-black rounded-none"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
 
@@ -64,11 +87,13 @@ export default function LoginPage() {
                                 id="password"
                                 type="password"
                                 className="border-0 border-b border-border bg-transparent px-0 shadow-none focus-visible:ring-0 focus-visible:border-black rounded-none"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
 
                         <div className="space-y-4 pt-4 group">
-                            <Button className="w-full h-12 text-xs font-bold rounded-none uppercase tracking-widest border border-transparent transition-all duration-300 transform bg-black text-white group-hover:bg-white group-hover:text-black group-hover:border-black hover:!bg-black hover:!text-white hover:!border-transparent hover:-translate-y-1 hover:shadow-lg active:scale-95">
+                            <Button type="submit" className="w-full h-12 text-xs font-bold rounded-none uppercase tracking-widest border border-transparent transition-all duration-300 transform bg-black text-white group-hover:bg-white group-hover:text-black group-hover:border-black hover:!bg-black hover:!text-white hover:!border-transparent hover:-translate-y-1 hover:shadow-lg active:scale-95">
                                 Login
                             </Button>
                             <Button

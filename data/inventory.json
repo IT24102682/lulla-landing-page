@@ -88,6 +88,12 @@
         "category": "t-shirts",
         "collections": [
             "oversized-tees"
+        ],
+        "images": [
+            "/essential-white-tee.png",
+            "/white-tee-back.png",
+            "/white-tee-side.png",
+            "/white-tee-detail.png"
         ]
     },
     {
