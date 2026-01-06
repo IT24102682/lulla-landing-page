@@ -1,0 +1,21 @@
+
+> my-v0-project@0.1.0 dev
+> next dev
+
+   ▲ Next.js 16.0.10 (Turbopack)
+   - Local:         http://localhost:3000
+   - Network:       http://192.168.1.6:3000
+
+ ✓ Starting...
+ ⚠ Attempted to load @next/swc-win32-x64-msvc, but an error occurred: \\?\C:\Users\Akarsha\Desktop\Projects\lulla-landing-page\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msvc.node is not a valid Win32 application.
+\\?\C:\Users\Akarsha\Desktop\Projects\lulla-landing-page\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msvc.node
+   Skipping creating a lockfile at C:\Users\Akarsha\Desktop\Projects\lulla-landing-page\.next\dev\lock because we're using WASM bindings
+C:\Users\Akarsha\Desktop\Projects\lulla-landing-page\node_modules\next\dist\build\swc\index.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+C:\Users\Akarsha\Desktop\Projects\lulla-landing-page\node_modules\next\dist\server\dev\hot-reloader-turbopack.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+C:\Users\Akarsha\Desktop\Projects\lulla-landing-page\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+C:\Users\Akarsha\Desktop\Projects\lulla-landing-page\node_modules\next\dist\trace\trace.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+C:\Users\Akarsha\Desktop\Projects\lulla-landing-page\node_modules\next\dist\server\lib\router-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+C:\Users\Akarsha\Desktop\Projects\lulla-landing-page\node_modules\next\dist\server\lib\start-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+Error: `turbo.createProject` is not supported by the wasm bindings.
+    at ignore-listed frames
+[?25h
