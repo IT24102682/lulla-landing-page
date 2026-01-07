@@ -3,10 +3,10 @@ import Image from "next/image"
 import { notFound } from "next/navigation"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
+
 import INVENTORY from "@/data/inventory.json"
 import { Truck, RotateCcw, ShieldCheck } from "lucide-react"
-import { useCart } from "@/hooks/use-cart"
+import { ProductActions } from "@/components/product-actions"
 
 export function generateStaticParams() {
     return INVENTORY.map((product) => ({
@@ -71,45 +71,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
                         <div className="w-full h-[1px] bg-border/40" />
 
-                        {/* Size Selector */}
-                        <div className="space-y-4">
-                            <div className="flex justify-between items-center">
-                                <span className="text-sm font-medium uppercase tracking-wide">Size</span>
-                                <button className="text-xs underline text-muted-foreground hover:text-foreground">Size Chart</button>
-                            </div>
-                            <div className="grid grid-cols-5 gap-2">
-                                {['XS', 'S', 'M', 'L', 'XL'].map((size) => (
-                                    <button
-                                        key={size}
-                                        className="h-12 border border-border rounded-lg flex items-center justify-center text-sm hover:border-foreground hover:bg-neutral-50 transition-all focus:ring-1 focus:ring-foreground"
-                                    >
-                                        {size}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Actions */}
-                        <div className="flex gap-4 pt-4">
-                            <Button
-                                onClick={() => {
-                                    useCart.getState().addItem({
-                                        id: product.id,
-                                        name: product.name,
-                                        price: product.price,
-                                        image: product.image,
-                                        size: 'M' // Defaulting to M for now as sizing logic isn't fully wired
-                                    })
-                                    // Could add toast here
-                                }}
-                                className="flex-1 h-14 bg-transparent border border-foreground text-foreground hover:bg-foreground hover:text-background text-xs uppercase tracking-[0.2em] rounded-none transition-colors"
-                            >
-                                Add to Cart
-                            </Button>
-                            <Button className="flex-1 h-14 bg-foreground text-background hover:bg-foreground/90 text-xs uppercase tracking-[0.2em] rounded-none">
-                                Buy It Now
-                            </Button>
-                        </div>
+                        <ProductActions product={product} />
 
                         {/* Highlights (Mock) */}
                         <div className="grid grid-cols-3 gap-4 pt-8 text-center text-xs text-muted-foreground">
