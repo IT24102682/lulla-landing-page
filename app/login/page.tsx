@@ -18,10 +18,14 @@ export default function LoginPage() {
         // Simple mock authentication
         if (email === "admin@lulla.com" && password === "admin123") {
             router.push("/admin")
+        } else if (email === "user@lulla.com" && password === "user123") {
+            // Save mock user name
+            localStorage.setItem("userName", "Test")
+            router.push("/profile")
         } else {
             // For now, regular user login could redirect to home or show an error
             // router.push("/")
-            alert("Invalid credentials. Try admin@lulla.com / admin123")
+            alert("Invalid credentials. Try admin@lulla.com / admin123 or user@lulla.com / user123")
         }
     }
 

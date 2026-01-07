@@ -15,9 +15,28 @@ import {
 import { ShopMegaMenu } from "@/components/shop-mega-menu"
 import { SearchModal } from "@/components/search-modal"
 import { CartDrawer } from "@/components/cart-drawer"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export function Navbar() {
   const [open, setOpen] = React.useState(false)
+  const [userName, setUserName] = React.useState<string | null>(null)
+
+  React.useEffect(() => {
+    // Check for user name on mount
+    const updateName = () => {
+      const storedName = localStorage.getItem("userName")
+      if (storedName) {
+        setUserName(storedName)
+      } else {
+        setUserName(null)
+      }
+    }
+
+    updateName()
+
+    window.addEventListener("user-updated", updateName)
+    return () => window.removeEventListener("user-updated", updateName)
+  }, [])
 
   return (
     <>
@@ -59,11 +78,19 @@ export function Navbar() {
           <Button variant="ghost" size="icon" className="md:hidden">
             <Menu className="w-6 h-6" />
           </Button>
-          <Button variant="ghost" size="icon" className="hidden md:flex" asChild>
-            <Link href="/login">
-              <User className="w-5 h-5" />
-            </Link>
-          </Button>
+          <Link href={userName ? "/profile" : "/login"}>
+            {userName ? (
+              <Avatar className="w-8 h-8 cursor-pointer hover:opacity-80 transition-opacity">
+                <AvatarFallback className="bg-black text-white text-xs font-bold">
+                  {userName.charAt(0).toUpperCase()}
+                </AvatarFallback>
+              </Avatar>
+            ) : (
+              <Button variant="ghost" size="icon" className="hidden md:flex">
+                <User className="w-5 h-5" />
+              </Button>
+            )}
+          </Link>
         </div>
       </nav >
       <SearchModal open={open} onOpenChange={setOpen} />

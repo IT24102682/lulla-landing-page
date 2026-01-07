@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import INVENTORY from "@/data/inventory.json"
 import { Truck, RotateCcw, ShieldCheck } from "lucide-react"
+import { useCart } from "@/hooks/use-cart"
 
 export function generateStaticParams() {
     return INVENTORY.map((product) => ({
@@ -90,7 +91,19 @@ export default function ProductPage({ params }: { params: { id: string } }) {
 
                         {/* Actions */}
                         <div className="flex gap-4 pt-4">
-                            <Button className="flex-1 h-14 bg-transparent border border-foreground text-foreground hover:bg-foreground hover:text-background text-xs uppercase tracking-[0.2em] rounded-none transition-colors">
+                            <Button
+                                onClick={() => {
+                                    useCart.getState().addItem({
+                                        id: product.id,
+                                        name: product.name,
+                                        price: product.price,
+                                        image: product.image,
+                                        size: 'M' // Defaulting to M for now as sizing logic isn't fully wired
+                                    })
+                                    // Could add toast here
+                                }}
+                                className="flex-1 h-14 bg-transparent border border-foreground text-foreground hover:bg-foreground hover:text-background text-xs uppercase tracking-[0.2em] rounded-none transition-colors"
+                            >
                                 Add to Cart
                             </Button>
                             <Button className="flex-1 h-14 bg-foreground text-background hover:bg-foreground/90 text-xs uppercase tracking-[0.2em] rounded-none">

@@ -1,7 +1,7 @@
 
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { LayoutDashboard, Package, Users, Settings } from "lucide-react"
+import { AdminSidebar } from "@/components/admin-sidebar"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -11,28 +11,8 @@ export default function AdminDashboard() {
             <Navbar />
 
             <main className="pt-32 pb-24 px-6 md:px-12 flex">
-                {/* Sidebar (Mock) */}
-                <div className="hidden lg:flex flex-col w-64 space-y-2 border-r border-border pr-8">
-                    <div className="font-bold text-xs uppercase tracking-widest text-muted-foreground mb-4">Menu</div>
-                    <button className="flex items-center gap-3 px-4 py-3 bg-black text-white rounded-lg text-sm font-medium transition-colors">
-                        <LayoutDashboard className="w-4 h-4" />
-                        Dashboard
-                    </button>
-                    <Link href="/admin/inventory">
-                        <button className="flex items-center gap-3 px-4 py-3 text-muted-foreground hover:bg-neutral-200 rounded-lg text-sm font-medium transition-colors w-full">
-                            <Package className="w-4 h-4" />
-                            Products / Inventory
-                        </button>
-                    </Link>
-                    <button className="flex items-center gap-3 px-4 py-3 text-muted-foreground hover:bg-neutral-200 rounded-lg text-sm font-medium transition-colors">
-                        <Users className="w-4 h-4" />
-                        Customers
-                    </button>
-                    <button className="flex items-center gap-3 px-4 py-3 text-muted-foreground hover:bg-neutral-200 rounded-lg text-sm font-medium transition-colors">
-                        <Settings className="w-4 h-4" />
-                        Settings
-                    </button>
-                </div>
+                {/* Sidebar */}
+                <AdminSidebar />
 
                 {/* Content */}
                 <div className="flex-1 lg:pl-12 space-y-8">
